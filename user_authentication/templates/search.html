@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Search</title>
+    <style>
+        /* button{
+            float: left;
+            background-position: top left;
+        } */
+
+        body {
+            background-image: url("{% static 'images/abstract-phone-wallpaper.jpg' %}");
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        
+        input[type="text"] {
+            width: 300px;
+            height: 30px;
+            font-size: 16px;
+            padding: 5px;
+        }
+        
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #1db954;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="goBack()" style="position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 9999; /* Adjust the z-index as needed */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;"><img src="{% static 'images/back.png' %}"></button>
+    <h2>Search your Song</h2>
+    <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Enter your search query" autofocus>
+        <br><br>
+        <input type="submit" value="Search">
+    </form>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            // Get the search query from the input field
+            var searchQuery = document.getElementById("searchInput").value;
+
+            // Open YouTube with the search query
+            var searchURL = "https://www.youtube.com/results?search_query=" + encodeURIComponent(searchQuery);
+            // window.location.href = searchURL;
+
+            // Open the YouTube playlist URL in a new window
+            window.open(searchURL, '_blank');
+        
+        });
+    </script>
+</body>
+</html>

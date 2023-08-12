@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Popure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f1f1f1;
+            background-image: url("{% static 'images/giphy.gif' %}");
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #fffefe;
+            margin-bottom: 20px;
+            margin-top: 110px;
+        }
+        h1{
+            font-size: 88px;
+            margin-left: 425px;
+            color: bisque;
+        }
+    </style>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+<body>
+    <button onclick="goBack()" id="tarun" style="position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 9999; /* Adjust the z-index as needed */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;"><img src="{% static 'images/back.png' %}"></button>
+    <h1>Popure</h1>
+    <p><b>Popure is an Emotion based Smart Music Player which works on the emotions of a user using facial recognitiontechniques as well as voice commands. Facial data is captured by employing a camera. The emotion module
+        makes use of deep learning techniques to perceive the exact emotional state relative to that expression, hence
+        leading to higher accuracy. It would require permission to access camera from a user’s device or a picture from
+        his/her device gallery. After the emotions are classified ,the app will suggest a playlist to the user pursuant to the
+        emotion detected by it. Also the system has some basic features like Play and Pause audio, Next and Previous
+        tracks etc. It often consists of certain prebuilt playlists of popular songs in different languages. Keeping in mind
+        that people of different age group have different taste in music, Popure has age detection technology using
+        which it would prioritize playlist of songs depending upon user’s age. More often the app involves podcasts of
+        session from counselor. However, the sessions are just to give a synopsis and not prescribed as a therapy. The
+        elite concept of this project is to automatically play songs based on the emotions of the user. It aims to provide
+        user-preferred music with respect to the emotions detected.</b></p>
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        body{
+            background-image: url("{% static 'images/abstract-phone-wallpaper.jpg' %}");
+            background-size:cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        .header {
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+
+        .emoji {
+            width: 100%;
+            height: 100%;
+        }
+
+        .emotions {
+            align-content: center;
+            border: 2px solid black;
+        }
+
+        .emo {
+            width: 50%;
+            height: 30%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .emo:hover {
+            transform: scale(1.1); /* Scale up the image on hover */
+        }
+        button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            background-color: transparent;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="full_page">
+        <button onclick="goBack()" style="position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 9999; /* Adjust the z-index as needed */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;"><img src="{% static 'images/back.png' %}"></button>
+        <div class="header">
+            <h1 style="text-align: center;">
+                Express your Mood on Clicking Emoji
+            </h1>
+
+        </div>
+        <div class="emoji">
+            <div class="container text-center emotions">
+                <div class="row row-cols-2">
+                    <div class="col emo" onclick="openYouTubePlaylist('happy')">
+                        <img src="{% static 'images/happy.png' %}" alt="" height="150px" width="150px"><b> Happy</b>
+                    </div>
+                    <div class="col emo" onclick="openYouTubePlaylist('sad')">
+                        <img src="{% static 'images/sad.png' %}" alt="" height="160px" width="160px"><b>Sad</b>
+                    </div>
+                    <div class="col emo" onclick="openYouTubePlaylist('excited')">
+                        <img src="{% static 'images/excited.png' %}" alt="" height="150px" width="150px"><b>Excited</b>
+                    </div>
+                    <div class="col emo" onclick="openYouTubePlaylist('angry')">
+                        <img src="{% static 'images/angry.png' %}" alt="" height="150px" width="150px"><b>Angry</b>
+                    </div>
+                    <div class="col emo" onclick="openYouTubePlaylist('tear')">
+                        <img src="{% static 'images/tear.png' %}" alt="" height="150px" width="150px"><b>Tear</b>
+                    </div>
+                    <div class="col emo" onclick="openYouTubePlaylist('surprise')">
+                        <img src="{% static 'images/surprise.png' %}" alt="" height="150px" width="150px"><b>Surprise</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'js/EmojiGenerator.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" ,initial_scale="1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Popure</title>
+    <style>
+        body{
+                background-image: url("{% static 'images/giphy.gif' %}");
+                background-repeat:no-repeat;
+                background-size:cover;
+                background-position: center center;
+                background-attachment: fixed;
+                }
+            .navbar {
+                background-color: #7e2f685c;
+                color: #fff;
+                display: flex;
+                justify-content: right;
+                align-items: center;
+                padding: 10px;
+                border-radius: 50px;
+              }
+              
+              nav ul {
+                list-style: none;
+                display: flex;
+                margin: 0;
+                padding: 0;
+              }
+              
+              nav li {
+                margin: 0 10px;
+              }
+              
+              .navbar-logo {
+                width: 150px;
+              }
+              
+              .navbar-button {
+                background-color: #fff;
+                color: #1db954;
+                border-radius: 50px;
+                padding: 10px 20px;
+                font-weight: bold;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border: none;
+              }
+              
+              .navbar-button:hover {
+                background-color: #fff;
+                color: #000;
+                cursor: pointer;
+              }
+              a {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #957b9021;
+                border: 1px solid transparent;
+                color: #fff;
+                text-decoration: underline;
+                font-size: 14px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+
+              }
+              a:hover {
+                transform: scale(1.1);
+                background-color: #555;
+                cursor :grab;
+              }
+        .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: center;
+        }
+
+        .card {
+        width: calc(20.0001% - 10px); /* width of each card element */
+        margin-bottom: 20px;
+        margin-top: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        }
+        .hoverable{
+            margin-left: 40%;
+        }
+        h1{
+            font-size: 50px;
+            margin-top: -10px;
+            color :beige;
+        }
+        /* Rest of the CSS styles... */
+    </style>
+</head>
+<body>
+    <!-- <header class="navbar">
+        <nav>
+            <ul>
+                <li style="font-size:40px">|</li>
+                <li><a href="#">About US</a></li>
+                 <li style="font-size:40px">|</li>
+                <li><a href="#">Sign up</a></li>
+                <li><a href="#">Log in</a></li> 
+            </ul>
+        </nav>
+    </header> -->
+    <button onclick="goBack()" id="tarun" style="position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 9999; /* Adjust the z-index as needed */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;"><img src="{% static 'images/back.png' %}"></button>
+    <h1 style="text-align: center;">Popure</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+                <div class="card hoverable" onclick="openVideo('FWJUHL2BsAM')">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/id/237/200/300">
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card hoverable" onclick="openVideo('aXvDEmo6uS4')">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/id/238/200/300">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s4">
+                <div class="card hoverable" onclick="openVideo('SwQhKFMxmDY')">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/id/239/200/300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openVideo(videoId) {
+            window.open('https://www.youtube.com/embed/' + videoId + '?autoplay=1', '_blank', 'height=500,width=800');
+        }
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

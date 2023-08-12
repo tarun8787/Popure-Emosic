@@ -1,0 +1,222 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width" ,initial_scale = "1.0">
+           
+
+        <title> Popure </title>
+        <style>
+            body{
+                background-image: url("{% static 'images/giphy.gif' %}");
+                background-repeat:no-repeat;
+                background-size:cover;
+                background-position: center center;
+                background-attachment: fixed;
+                }
+            .navbar {
+                background-color: #7e2f685c;
+                color: #fff;
+                display: flex;
+                justify-content: right;
+                align-items: center;
+                padding: 10px;
+                border-radius: 50px;
+              }
+              
+              nav ul {
+                list-style: none;
+                display: flex;
+                margin: 0;
+                padding: 0;
+              }
+              
+              nav li {
+                margin: 0 10px;
+              }
+              
+              .navbar-logo {
+                width: 150px;
+              }
+              
+              .navbar-button {
+                background-color: #fff;
+                color: #1db954;
+                border-radius: 50px;
+                padding: 10px 20px;
+                font-weight: bold;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border: none;
+              }
+              
+              .navbar-button:hover {
+                background-color: #fff;
+                color: #000;
+                cursor: pointer;
+              }
+              a {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #957b9021;
+                border: 1px solid transparent;
+                color: #fff;
+                text-decoration: underline;
+                font-size: 14px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+
+              }
+              a:hover {
+                transform: scale(1.1);
+                background-color: #555;
+              }
+              
+
+      /* Create a container to hold the image and login form */
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 100vh;
+        padding: 0 20px;
+      }
+
+      /* Style for the image */
+      /* .image {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .image img {
+        max-width: 100%;
+        height: auto;
+      }
+      */
+
+      /* Style for the login form */
+      .signup-form {
+        width: 380px;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        margin-top: 50px;
+        margin-left: auto;
+      }
+      /* form {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+        }
+    */
+
+        .signup-form h2 {
+            margin: 0 0 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+        display: inline-block;
+        text-align: left;
+        width: 100px;
+        margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        }
+
+        .signup-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #1db954;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+
+          
+        h1 {
+            color: #fff;
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px #000;
+            margin-top: 150px;
+            margin-bottom: 280px;
+          }
+        
+          p {
+            color: #fff;
+            font-size: 24px;
+            text-align: left;
+            text-shadow: 1px 1px #000;
+            margin-top: 50px;
+            margin-left : -245px
+          }
+
+        </style>
+        
+    </head>
+    <body>
+      
+        <header class="navbar">
+            <nav>
+              <ul>
+                <li><a href="{% url 'about' %}">About US</a></li>
+                <li style="font-size:40px">|</li>
+                <!-- <li style="font-size:40px">|</li>
+                <li><a href="#">Sign up</a></li> -->
+                <li><a href="{% url 'login' %}">Log in</a></li>
+              </ul>
+            </nav>
+          </header>
+          <div class="container">
+            <!-- <div class="image">
+              <img src="giphy.gif" alt="Headset image">
+            </div> -->
+            <h1>POPURE</h1>
+            <p> An Emotion Based Music Player Application </p>
+            <div class="signup-form">
+              <h2>Change Your Password</h2>
+              <form id="change-password-form">
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="password"> New Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                
+                <button type="submit" id="submit">Update</button>
+              </form>              
+            </div>
+          </div>
+          <script type="text/javascript" src="{% static 'js/forgot.js' %}"></script>
+    </body>
+</html>
